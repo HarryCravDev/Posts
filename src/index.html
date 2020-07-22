@@ -22,12 +22,48 @@
     <title>MicroPosts</title>
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-primary mb-3">
       <div class="container">
         <a href="#" class="navbar-brand">MicroPosts</a>
       </div>
     </nav>
+
+    <!-- SECTION 1 - ENTER POSTS -->
+    <div class="container postsContainer">
+      <div class="card card-body card-form">
+        <!-- Title & Para -->
+        <h1>Say Something</h1>
+        <p class="lead">Whats on your mind?</p>
+        <!-- Post Title -->
+        <div class="form-group">
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            placeholder="Post Title"
+          />
+        </div>
+        <!-- Post body -->
+        <div class="form-group">
+          <textarea
+            id="body"
+            class="form-control"
+            placeholder="Post Body"
+          ></textarea>
+        </div>
+        <!-- Hidden input, Submit button, Hidden span -->
+        <input type="hidden" id="id" value="" />
+        <button class="post-submit btn btn-primary btn-block">Post it!</button>
+        <span class="form-end"></span>
+      </div>
+      <br />
+      <!-- Posts -->
+      <div id="posts"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-5 p-3 text-center bg-light">MicroPosts @copy;</footer>
 
     <!-- JavaScript -->
     <script src="./JS/app.js"></script>
