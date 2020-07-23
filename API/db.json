@@ -2,8 +2,21 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Title 1",
+      "body": "This is post 1.",
+      "author": "Bill Gates"
+    },
+    {
+      "id": 2,
+      "title": "Title 2",
+      "body": "This is post 2.",
+      "author": "Steve Jobs"
+    },
+    {
+      "id": 3,
+      "title": "Title 3",
+      "body": "This is post 3.",
+      "author": "Elon Musk"
     }
   ],
   "comments": [
