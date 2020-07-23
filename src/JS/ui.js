@@ -8,6 +8,7 @@ class UI {
     this.forState = "add";
   }
 
+  // Display Posts to DOM
   getPosts = (posts) => {
     let output = "";
 
@@ -30,6 +31,7 @@ class UI {
     this.posts.innerHTML = output;
   };
 
+  // Display Alert to DOM
   showAlert = (message, className) => {
     this.clearAlert();
 
@@ -52,6 +54,7 @@ class UI {
     }, 3000);
   };
 
+  // Clear existing alerts
   clearAlert = () => {
     const currentAlert = document.querySelector(".alert");
 
@@ -60,9 +63,17 @@ class UI {
     }
   };
 
+  // Clear all input fields
   clearFields = () => {
     this.titleInput.value = "";
     this.bodyInput.value = "";
+  };
+
+  // Fill form to edit
+  fillForm = (data) => {
+    this.titleInput.value = data.title;
+    this.bodyInput.value = data.body;
+    this.idInput.value = data.id;
   };
 }
 

@@ -30,8 +30,49 @@ const submitPosts = () => {
     .catch((err) => console.log(err));
 };
 
+// Delete Post
+const deletePost = (e) => {
+  e.preventDefault();
+  if (e.target.parentElement.classList.contains("delete")) {
+    const id = e.target.parentElement.dataset.id;
+    http
+      .delete(`http://localhost:3000/posts/${id}`)
+      .then((data) => {
+        ui.showAlert("Post remove.", "alert alert-success");
+        getPosts();
+      })
+      .catch((err) => console.log(err));
+  }
+};
+
+// Edit Post
+const editPost = (e) => {
+  e.preventDefault();
+  if (e.target.parentElement.classList.contains("edit")) {
+    const id = e.target.parentElement.dataset.id;
+    const title =
+      e.target.parentElement.previousElementSibling.previousElementSibling
+        .textContent;
+    const body = e.target.parentElement.previousElementSibling.textContent;
+
+    const data = {
+      id,
+      title,
+      body,
+    };
+
+    ui.fillForm(data);
+  }
+};
+
 // Get posts on DOM load
 document.addEventListener("DOMContentLoaded", getPosts);
 
 // Listen for add post
 document.querySelector(".post-submit").addEventListener("click", submitPosts);
+
+// Listen for delete post
+document.querySelector("#posts").addEventListener("click", deletePost);
+
+// Listen for edit post
+document.querySelector("#posts").addEventListener("click", editPost);
